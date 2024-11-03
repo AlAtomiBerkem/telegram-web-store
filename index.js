@@ -1,27 +1,25 @@
 const token = '7630284623:AAGUOCzhvE1SP_Vhg3REyS7HPs205xVZ_e0'
 
 const TelegramBot = require('node-telegram-bot-api');
-// Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
-
-// Matches "/echo [whatever]"
-bot.onText(/\/echo (.+)/, (msg, match) => {
-    // 'msg' is the received Message from Telegram
-    // 'match' is the result of executing the regexp above on the text content
-    // of the message
-    
+const webAppUrl = '/';
+ bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
-    const resp = match[1]; // the captured "whatever"
+    const text = msg.text;
     
-    // send back the matched "whatever" to the chat
-    bot.sendMessage(chatId, resp);
-});
-
-// Listen for any kind of message. There are different kinds of
-// messages.
-bot.on('message', (msg) => {
-    const chatId = msg.chat.id;
+    // if (text === '/start') {
+    //     await bot.sendMessage(chatId, 'ниже появится конопка заполнить', {
+    //         reply_markup: {
+    //             keyboard: [
+    //                 [{text: 'заполнить форму'}],
+    //                 ],
+    //             inline_keyboard: [
+    //                 [{text: 'заполнить форму', web_app: {url: webAppUrl}}],
+    //             ]
+    //         }
+    //     });
+    // }
     
-    // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, 'Received your message');
+    bot.sendMessage(chatId, 'здарова заебал');
+    console.log('ответ отправлен');
 });
