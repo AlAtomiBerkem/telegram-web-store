@@ -1,0 +1,12 @@
+{
+    "sami": true,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "tabWidth": 2,
+    "useTabs": false,
+    "endOfLine": "lf",
+    "printWidth" 80,
+
+}
