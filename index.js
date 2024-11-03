@@ -1,0 +1,25 @@
+const token = '7630284623:AAGUOCzhvE1SP_Vhg3REyS7HPs205xVZ_e0'
+
+const TelegramBot = require('node-telegram-bot-api');
+const bot = new TelegramBot(token, {polling: true});
+const webAppUrl = '/';
+ bot.on('message', async (msg) => {
+    const chatId = msg.chat.id;
+    const text = msg.text;
+    
+    // if (text === '/start') {
+    //     await bot.sendMessage(chatId, 'ниже появится конопка заполнить', {
+    //         reply_markup: {
+    //             keyboard: [
+    //                 [{text: 'заполнить форму'}],
+    //                 ],
+    //             inline_keyboard: [
+    //                 [{text: 'заполнить форму', web_app: {url: webAppUrl}}],
+    //             ]
+    //         }
+    //     });
+    // }
+    
+    bot.sendMessage(chatId, 'здарова заебал');
+    console.log('ответ отправлен');
+});
