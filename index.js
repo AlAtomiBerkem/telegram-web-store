@@ -14,7 +14,7 @@ const webAppUrl = 'https://storied-bombolone-37d940.netlify.app/'
         await bot.sendMessage(chatId, 'ниже появится конопка заполнить', {
             reply_markup: {
                 keyboard: [
-                    [{text: 'сделать заказ', web_app: {url: webAppUrl}}],
+                    [{text: 'сделать заказ', web_app: {url: webAppUrl + '/form'}}],
                 ],
             },
         });
@@ -26,6 +26,7 @@ const webAppUrl = 'https://storied-bombolone-37d940.netlify.app/'
             },
         });
     }
+    
     
     
     bot.sendMessage(chatId, 'здарова заебал');
